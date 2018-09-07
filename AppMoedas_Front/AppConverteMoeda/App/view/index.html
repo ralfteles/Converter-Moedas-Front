@@ -1,0 +1,58 @@
+﻿<div class="panel panel-primary ">
+    <div class="panel-heading"><h4 class="text-center"><strong>Informe os valores a serem convertido</strong></h4></div>
+
+    <div class="panel-body" ng-init="vm.Start()">
+
+        <form name="formulario" ng-submit="vm.Converter(formulario.$valid)" novalidate>
+            <div class="form-group col-md-12">
+                <label>Nome:</label>
+                <input type="text" class="form-control" ng-model="vm.model.nome" name="nome" required>
+                <div ng-if="(formulario.$submitted) && formulario.nome.$invalid">
+                    <span class="validator" ng-if="formulario.nome.$error.required">campo obrigatório</span>
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Moeda de Entrada:</label>
+                <select class="form-control" name="entrada" ng-model="vm.model.entrada">
+                    <option value="">---selecionar---</option>
+                    <option value="REAL">REAL</option>
+                    <option value="EURO">EURO</option>
+                    <option value="DOLAR">DOLAR</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Moeda de Saída:</label>
+                <select class="form-control" name="saida" ng-model="vm.model.saida">
+                    <option value="">---selecionar---</option>
+                    <option value="REAL">REAL</option>
+                    <option value="EURO">EURO</option>
+                    <option value="DOLAR">DOLAR</option>
+                </select>
+
+            </div>
+
+            <div class="form-group col-md-4">
+                <label>Valor:</label>
+                <input type="text" class="form-control" ng-model="vm.model.valor" name="valor">
+            </div>
+
+            <div class="row text-center">
+                <button type="submit" class="btn btn-info">Converter</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div class="panel panel-default panel-resultado ">
+    <div class="panel-heading"><h4 class="text-center"><strong>Histórico</strong></h4></div>
+    <div class="panel-body">
+        <div class="col-md-12">
+            <div class="row">
+                <label>Entrada: {{vm.de}}</label> <br />
+                <label>Saída: {{vm.para}}</label><br />
+                <label><strong>Valor: {{vm.resultado}}</strong> - {{vm.dataSave}}</label> <br />
+            </div>
+        </div>
+    </div>
+</div>
