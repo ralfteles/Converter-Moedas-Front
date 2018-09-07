@@ -1,0 +1,5 @@
+Para testar precisa rodar a API e depois rodar o projeto Front
+
+Observação: verificar em que porta a API esta rodando, confirmar a url no arquivo converteService.
+atualmente esta assim:
+ var api = "http://localhost:58174/api/"
